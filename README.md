@@ -2,11 +2,11 @@
 
 ### Healthcare Machine Learning | Dr. Natheer Soliman, MD
 
-A machine-learning project exploring patient-level factors associated with stroke and building a classification model as a healthcare analytics exercise.
+A healthcare machine-learning project exploring patient-level factors associated with stroke and demonstrating a classification workflow for imbalanced clinical data.
 
 ## 🎯 Objective
 
-Develop a reproducible machine-learning pipeline that demonstrates how clinical data can be prepared and modeled while accounting for the **class imbalance** commonly found in healthcare datasets.
+Build a reproducible machine-learning workflow that demonstrates preprocessing, feature scaling, class-imbalance handling, model persistence, and clinically responsible interpretation.
 
 ## ⚙️ Pipeline
 
@@ -14,20 +14,14 @@ Develop a reproducible machine-learning pipeline that demonstrates how clinical 
 2. Feature scaling with `StandardScaler`
 3. Class-imbalance handling with `SMOTE`
 4. Classification using `GradientBoostingClassifier`
-5. Model evaluation using appropriate classification metrics
+5. Model persistence with `joblib`
+6. Evaluation with clinically relevant classification metrics when the full training workflow is available
 
-## 🧰 Tech Stack
+## 📦 Repository Contents
 
-- Python
-- Pandas
-- Scikit-learn
-- Joblib
-- SMOTE
-
-## 📦 Model Files
-
-- `stroke_model.joblib` — trained model
-- `medical_features.joblib` — feature information used by the model
+- `stroke_model.joblib` — trained model artifact
+- `medical_features.joblib` — stored feature information
+- `requirements.txt` — Python dependencies
 
 ## ▶️ Loading the Model
 
@@ -37,7 +31,24 @@ import joblib
 model = joblib.load("stroke_model.joblib")
 ```
 
-The model should receive data prepared with the same feature structure and preprocessing assumptions used during training.
+The model must receive data prepared with the **same feature structure and preprocessing assumptions** used during training.
+
+## 📊 Model Evaluation
+
+The repository currently contains the trained model artifacts but does not yet expose the full training notebook or a verified evaluation table. For that reason, this README intentionally does **not** claim accuracy, recall, F1, or ROC-AUC values that cannot be reproduced from the files currently published.
+
+A future revision should add:
+
+- train/test split methodology
+- confusion matrix
+- precision, recall, F1-score
+- ROC-AUC and/or PR-AUC
+- calibration assessment
+- feature importance or interpretable model analysis
+
+## 🩺 Clinical Perspective
+
+In stroke screening, class imbalance and false-negative risk matter. Model performance should therefore be judged with more than accuracy alone, particularly recall/sensitivity, precision, discrimination, calibration, and external validation.
 
 ## ⚠️ Important Note
 
