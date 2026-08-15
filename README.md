@@ -1,32 +1,49 @@
-🧠 Stroke Prediction: AI for Healthcare
-Welcome! This repository is more than just code—it’s an intersection of medicine and data science, designed to support clinical decision-making through AI.
-🎯 The Mission
-The goal of this project is to provide a reliable, data-driven approach to predicting stroke risk factors. By leveraging machine learning, we aim to transform patient health records into actionable insights that can assist medical professionals in identifying at-risk patients early
-⚙️ Under the Hood (Technical Pipeline)This model isn't just a simple algorithm; it uses a sophisticated pipeline built for high-performance clinical data analysis:  Precision Preprocessing: We use StandardScaler to normalize complex health metrics, ensuring every feature is weighed correctly for the model.  Intelligent Balancing: To solve the "data imbalance" challenge common in healthcare (where stroke cases are fewer than healthy ones), we utilize SMOTE for synthetic data balancing.  The Engine: At its core, the GradientBoostingClassifier is tuned to recognize subtle patterns in patient data that traditional methods might miss.  
-🚀 How to Get Started
-Ready to explore the code? Here is how to hit the ground running.
+# 🧠 Stroke Prediction Model
 
-1. Requirements
-Ensure your environment is ready to handle the analysis:
-scikit-learn==1.6.1
-joblib
-pandas
-2. Quick-Start Loading
-Load the model and start predicting in seconds:import joblib
+### Healthcare Machine Learning | Dr. Natheer Soliman, MD
 
-# Load the trained model
-model = joblib.load('stroke_model.pkl')
+A machine-learning project exploring patient-level factors associated with stroke and building a classification model as a healthcare analytics exercise.
 
-# Simply pass your preprocessed data:
-# prediction = model.predict(patient_data)🤝 Let’s Connect & Collaborate
-I believe that open-source medical data projects are the future of healthcare. If you:
+## 🎯 Objective
 
-Have ideas to improve the accuracy of this model,
+Develop a reproducible machine-learning pipeline that demonstrates how clinical data can be prepared and modeled while accounting for the **class imbalance** commonly found in healthcare datasets.
 
-Want to add new medical features,
+## ⚙️ Pipeline
 
-Or simply want to discuss data analytics in medicine,
+1. Data preprocessing
+2. Feature scaling with `StandardScaler`
+3. Class-imbalance handling with `SMOTE`
+4. Classification using `GradientBoostingClassifier`
+5. Model evaluation using appropriate classification metrics
 
-Please open an issue or submit a pull request! Let's make clinical data analysis smarter, together.
+## 🧰 Tech Stack
 
-Developed with  by DR. NATHEER YOUNIS SULIMAN
+- Python
+- Pandas
+- Scikit-learn
+- Joblib
+- SMOTE
+
+## 📦 Model Files
+
+- `stroke_model.joblib` — trained model
+- `medical_features.joblib` — feature information used by the model
+
+## ▶️ Loading the Model
+
+```python
+import joblib
+
+model = joblib.load("stroke_model.joblib")
+```
+
+The model should receive data prepared with the same feature structure and preprocessing assumptions used during training.
+
+## ⚠️ Important Note
+
+This project is for **educational and portfolio purposes**. A machine-learning prediction is not a medical diagnosis and should not be used for clinical decision-making without appropriate validation and clinical oversight.
+
+## 👨‍⚕️ Author
+
+**Dr. Natheer Soliman, MD**  
+Healthcare Data Analyst | Clinical Data & AI
