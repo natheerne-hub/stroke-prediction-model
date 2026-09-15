@@ -1,85 +1,81 @@
-# 🧠 Stroke Prediction Model
+# 🧠 Stroke Prediction Model — Artifact Audit
 
 [![Validate Model Artifacts](https://github.com/natheerne-hub/stroke-prediction-model/actions/workflows/validate-model.yml/badge.svg)](https://github.com/natheerne-hub/stroke-prediction-model/actions/workflows/validate-model.yml)
 
-### Healthcare Machine Learning | Dr. Natheer Soliman, MD
+### Healthcare ML Governance & Reproducibility | Dr. Natheer Soliman, MD
 
-A healthcare machine-learning portfolio project demonstrating publication, integrity validation, and responsible documentation of a trained stroke-prediction artifact.
+This repository is best understood as a **model-artifact audit**, not a fully reproducible stroke-prediction study.
 
-## 🎯 Objective
+It demonstrates how I handle an incomplete healthcare ML artifact responsibly: verify what is actually available, automate integrity checks, document the intended workflow, and avoid publishing performance claims that cannot be independently reproduced.
 
-Demonstrate a healthcare classification workflow involving preprocessing, feature management, class-imbalance handling, Gradient Boosting, model persistence, and clinically responsible interpretation.
+## Why this repository matters
 
-## ✅ What Is Published
+In healthcare AI, recognizing what **cannot** be validated is as important as reporting what can. The original training dataset, train/test split and complete training notebook are not published here. For that reason, this repository intentionally does **not** present unsupported accuracy, ROC-AUC, sensitivity or other clinical-performance claims.
 
-- A serialized trained model: `stroke_model.joblib`
-- Stored feature information: `medical_features.joblib`
-- Automated artifact-integrity validation
-- Reproducible Python dependencies
-- A transparent model card describing intended use and limitations
+That limitation is treated as a governance finding rather than hidden as a portfolio weakness.
 
-## ⚙️ Documented Workflow
+## Published artifacts
 
-1. Patient-data preprocessing
-2. Feature preparation and scaling
-3. Class-imbalance handling with SMOTE
-4. Classification with `GradientBoostingClassifier`
-5. Model and feature persistence with `joblib`
-6. Automated verification that the published artifacts load correctly
+- `stroke_model.joblib` — serialized trained model artifact
+- `medical_features.joblib` — stored feature information
+- `validate_model.py` — automated artifact-integrity checks
+- `MODEL_CARD.md` — intended use, limitations and responsible-use documentation
+- `requirements.txt` — Python dependencies
+- GitHub Actions workflow for repeatable artifact validation
 
-> The original training notebook and dataset are not currently published. Therefore, this repository does not claim performance metrics that cannot be reproduced from the available files.
+## Documented historical workflow
 
-## 📦 Repository Contents
+The available project documentation describes a workflow involving:
 
-- [`stroke_model.joblib`](./stroke_model.joblib) — serialized trained model
-- [`medical_features.joblib`](./medical_features.joblib) — stored feature information
-- [`validate_model.py`](./validate_model.py) — model-artifact integrity checks
-- [`MODEL_CARD.md`](./MODEL_CARD.md) — intended use, limitations, and responsible-use notes
-- [`requirements.txt`](./requirements.txt) — Python dependencies
-- [`.github/workflows/validate-model.yml`](./.github/workflows/validate-model.yml) — automated validation workflow
+1. patient-data preprocessing,
+2. feature preparation,
+3. class-imbalance handling with SMOTE,
+4. `GradientBoostingClassifier`,
+5. artifact persistence with `joblib`,
+6. automated checks that the published artifacts remain loadable.
 
-## ▶️ Validate the Published Artifacts
+Because the original training materials are unavailable in this repository, these steps should not be interpreted as a fully reproducible training pipeline.
+
+## Reproducible check available today
 
 ```bash
 pip install -r requirements.txt
 python validate_model.py
 ```
 
-The validation confirms that:
+The validation checks that the published artifacts exist, load successfully, expose the expected model interface, and contain a feature collection.
 
-- both published artifact files exist
-- both artifacts can be loaded with `joblib`
-- the model exposes a `predict()` method
-- the stored feature artifact behaves as a feature collection
+## Reproducibility gap
 
-## 📊 Model Evaluation Status
+A complete model-development release would need, at minimum:
 
-A verified evaluation table cannot yet be reproduced from the published repository because the original dataset, train/test split, and full training notebook are not included.
+- verified dataset source and data dictionary,
+- reproducible preprocessing and training code,
+- train/test methodology,
+- confusion matrix and threshold definition,
+- sensitivity, specificity, precision and recall,
+- ROC-AUC and PR-AUC,
+- calibration assessment,
+- subgroup/fairness analysis,
+- model interpretation,
+- external validation before clinical use.
 
-A future complete release should add:
+## Clinical governance perspective
 
-- dataset source and data dictionary
-- full preprocessing and training pipeline
-- train/test split methodology
-- confusion matrix
-- precision, recall, F1-score
-- ROC-AUC and PR-AUC
-- calibration assessment
-- subgroup/fairness analysis
-- feature importance or interpretable-model analysis
+Stroke prediction is a high-consequence use case. Class imbalance, false negatives, calibration, population shift and threshold selection can materially change clinical usefulness. A saved model file alone is therefore insufficient evidence of clinical performance.
 
-## 🩺 Clinical Perspective
+This repository demonstrates a principle I apply across healthcare analytics: **trace the evidence, make limitations visible, and do not convert an unverifiable result into a portfolio claim.**
 
-In stroke screening, class imbalance and false-negative risk are clinically important. Accuracy alone is insufficient; sensitivity, precision, discrimination, calibration, subgroup performance, external validation, and clinical workflow impact must all be assessed.
+## Status
 
-## ⚠️ Important Note
+**Artifact integrity:** testable  
+**Training reproducibility:** incomplete  
+**Performance claims:** intentionally withheld  
+**Clinical use:** not appropriate
 
-This repository is for **educational and portfolio purposes**. The published model is not a medical device, does not provide a diagnosis, and must not be used for patient-care decisions without full technical validation, external clinical validation, governance, and professional oversight.
-
-## 👨‍⚕️ Author
+## Author
 
 **Dr. Natheer Soliman, MD**  
-Healthcare Data Analyst | Clinical Data & AI
+Healthcare Data Analytics · Clinical Analytics · Responsible Healthcare AI
 
-🔗 [GitHub Profile](https://github.com/natheerne-hub)  
-💼 [LinkedIn](https://www.linkedin.com/in/nather-suliaman-64866342a/)
+[GitHub Profile](https://github.com/natheerne-hub)
