@@ -2,7 +2,7 @@
 
 [![Validate Model Artifacts](https://github.com/natheerne-hub/stroke-prediction-model/actions/workflows/validate-model.yml/badge.svg)](https://github.com/natheerne-hub/stroke-prediction-model/actions/workflows/validate-model.yml)
 
-### Healthcare ML Governance & Reproducibility | Dr. Natheer Soliman, MD
+### Healthcare ML Governance & Reproducibility | Dr. Nather Yunis Suliaman, MD
 
 This repository is best understood as a **model-artifact audit**, not a fully reproducible stroke-prediction study.
 
@@ -75,7 +75,7 @@ This repository demonstrates a principle I apply across healthcare analytics: **
 
 ## Author
 
-**Dr. Natheer Soliman, MD**  
+**Dr. Nather Yunis Suliaman, MD**  
 Healthcare Data Analytics · Clinical Analytics · Responsible Healthcare AI
 
 [GitHub Profile](https://github.com/natheerne-hub)
