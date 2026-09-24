@@ -58,5 +58,5 @@ A machine-learning output is not a diagnosis. Stroke risk is clinically complex 
 
 ## Author
 
-**Dr. Natheer Soliman, MD**  
+**Dr. Nather Yunis Suliaman, MD**  
 Healthcare Data Analyst | Clinical Data & AI
